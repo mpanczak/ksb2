@@ -8,9 +8,16 @@ public class ProductApi {
 
 
 //    PARAM
-    @GetMapping()
-    public String getProduct(@RequestParam String name,
-                             @RequestParam(required = false, defaultValue = "") String surname) {
+//    @GetMapping()
+//    public String getProduct(@RequestParam String name,
+//                             @RequestParam(required = false, defaultValue = "") String surname) {
+//        return "Hello " + name + " " + surname;
+//    }
+
+//    PATH
+    @GetMapping("/{name}/{surname}")
+    public String getProduct(@PathVariable String name,
+                             @PathVariable String surname) {
         return "Hello " + name + " " + surname;
     }
 
