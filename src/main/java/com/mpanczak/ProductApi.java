@@ -22,9 +22,16 @@ public class ProductApi {
 //    }
 
 //    HEADER
+//    @GetMapping()
+//    public String getProduct(@RequestHeader String name,
+//                             @RequestHeader(required = false, defaultValue = "") String surname) {
+//        return "Hello " + name + " " + surname;
+//    }
+
+//    BODY
     @GetMapping()
-    public String getProduct(@RequestHeader String name,
-                             @RequestHeader(required = false, defaultValue = "") String surname) {
+    public String getProduct(@RequestBody String name,
+                             @RequestBody(required = false) String surname) {
         return "Hello " + name + " " + surname;
     }
 
