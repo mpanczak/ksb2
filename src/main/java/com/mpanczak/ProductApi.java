@@ -15,9 +15,16 @@ public class ProductApi {
 //    }
 
 //    PATH
-    @GetMapping("/{name}/{surname}")
-    public String getProduct(@PathVariable String name,
-                             @PathVariable String surname) {
+//    @GetMapping("/{name}/{surname}")
+//    public String getProduct(@PathVariable String name,
+//                             @PathVariable String surname) {
+//        return "Hello " + name + " " + surname;
+//    }
+
+//    HEADER
+    @GetMapping()
+    public String getProduct(@RequestHeader String name,
+                             @RequestHeader(required = false, defaultValue = "") String surname) {
         return "Hello " + name + " " + surname;
     }
 
