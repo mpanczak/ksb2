@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.*;
 public class ProductApi {
 
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-//    @GetMapping()
-    public String getProduct() {
-        return "Hello GET";
+//    PARAM
+    @GetMapping()
+    public String getProduct(@RequestParam String name,
+                             @RequestParam(required = false, defaultValue = "") String surname) {
+        return "Hello " + name + " " + surname;
     }
 
     @PostMapping("/products")
