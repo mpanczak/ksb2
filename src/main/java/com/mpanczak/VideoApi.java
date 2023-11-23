@@ -1,6 +1,7 @@
 package com.mpanczak;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,9 @@ public class VideoApi {
         videoList.add(new Video(2L, "Testcontainers - Automatyczne Zarządzanie Bazami Danych w Testach", "https://www.youtube.com/watch?v=__VVQV7Pt94"));
     }
 
-    @GetMapping
+    @GetMapping(produces = {
+            MediaType.APPLICATION_XML_VALUE,
+            MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<Video>> getVideo() {
         return new ResponseEntity<>(videoList, HttpStatus.OK);
     }
